@@ -1,0 +1,120 @@
+local q1=game.Players.LocalPlayer
+local q2=game.CoreGui
+local q3=game:GetService("RunService")
+local q4=Instance.new("ScreenGui")
+q4.Parent=q2
+
+local function junk1()
+    local x=0
+    for i=1,5 do
+        x=x+i
+    end
+    return x
+end
+
+local q5=Instance.new("Frame")
+q5.Size=UDim2.new(0.3,0,0.3,0)
+q5.Position=UDim2.new(0.35,0,0.35,0)
+q5.BackgroundColor3=Color3.new(1,1,1)
+q5.Draggable=true
+q5.Active=true
+q5.Visible=true
+q5.Parent=q4
+
+local function junk2()
+    local a,b=0,1
+    for i=1,math.random(5,10) do
+        a,b=b,a+b
+    end
+    return a
+end
+
+local q6=Instance.new("TextLabel")
+q6.Size=UDim2.new(1,0,0,30)
+q6.Position=UDim2.new(0,0,0,0)
+q6.Text=string.reverse("xeforP yB edaM")
+q6.BackgroundColor3=Color3.new(0,0,0)
+q6.TextColor3=Color3.new(1,1,1)
+q6.Parent=q5
+
+local q7=Instance.new("TextButton")
+q7.Size=UDim2.new(0.5,-10,0,50)
+q7.Position=UDim2.new(0.25,-60,0.5,-25)
+q7.Text=string.reverse("pilcoN elggoT")
+q7.BackgroundColor3=Color3.new(0.4,0.4,0.4)
+q7.TextColor3=Color3.new(1,1,1)
+q7.Parent=q5
+
+local q8=Instance.new("TextButton")
+q8.Size=UDim2.new(0,100,0,50)
+q8.Position=UDim2.new(0.05,0,0.05,0)
+q8.Text=string.reverse("IUG elggoT")
+q8.BackgroundColor3=Color3.new(0.4,0.4,0.4)
+q8.TextColor3=Color3.new(1,1,1)
+q8.Draggable=true
+q8.Parent=q4
+
+local z1=false
+local function jcl(q9)
+    local q10=q1.Character
+    if q10 then
+        for q11,q12 in ipairs(q10:GetDescendants()) do
+            if (q12:IsA("BasePart") and not q12.Parent:IsA("Accessory") and not q12:FindFirstAncestorOfClass("Tool")) then
+                q12.CanCollide=not q9
+            end
+        end
+    end
+end
+
+local function hgt()
+    z1=not z1
+    q7.Text=(z1 and string.reverse("NO :pilcoN")) or string.reverse("FFO :pilcoN")
+end
+
+local function xzy()
+    q5.Visible=not q5.Visible
+end
+
+local function junk3()
+    local t="this is junk"
+    for i=1,#t do
+        local _=string.byte(t,i)
+    end
+end
+
+q7.MouseButton1Click:Connect(function()
+    hgt()
+    junk1()
+    junk3()
+end)
+
+q8.MouseButton1Click:Connect(function()
+    xzy()
+    junk2()
+end)
+
+q3.RenderStepped:Connect(function()
+    if z1 then
+        for p=1,10 do
+            jcl(true)
+            junk1()
+        end
+    end
+end)
+
+local y1=0
+q3.RenderStepped:Connect(function(r1)
+    y1=(y1+(r1*0.1))%1
+    q5.BackgroundColor3=Color3.fromHSV(y1,1,1)
+    junk2()
+end)
+
+-- Random useless chunk to confuse decompilers
+do
+    local useless_table={["key1"]="value1",["key2"]="value2"}
+    for k,v in pairs(useless_table) do
+        if v=="not_a_real_value" then
+            print("No fucking shit")
+        end
+    end
+end
