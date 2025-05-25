@@ -1,7 +1,7 @@
 local localPlayer = game:GetService("Players").LocalPlayer
 local uis = game:GetService("UserInputService")
 local isRunning = false 
-local multiplier = 120
+local multiplier = 13
 task.spawn(function()
     local hint = Instance.new("Hint", workspace)
     hint.Text = "Script Made By Proofex And MARTIN (KIDS)"
